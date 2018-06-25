@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        applicationId "com.ispresearch.bluetoothsensor"
+        minSdkVersion 23
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    compile 'com.android.support:mediarouter-v7:27.1.1'
+    compile 'com.android.support:appcompat-v7:27.1.1'
+
+    //added for graphview
+    compile 'com.jjoe64:graphview:4.2.1'
+
+    //added for database
+    compile 'android.arch.persistence.room:runtime:1.0.0'
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+
+    compile "android.arch.lifecycle:runtime:1.1.1"
+    compile "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'org.jetbrains:annotations-java5:15.0'
+    compile "com.android.support:recyclerview-v7:27.1.1"
+    compile "com.android.support:design:27.1.1"
+
+    //D2
+    compile "com.google.dagger:dagger-android-support:2.14.1"
+    compile "com.google.dagger:dagger:2.14.1"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.14.1"
+
+
+    testCompile 'org.mockito:mockito-core:2.8.9'
+}
